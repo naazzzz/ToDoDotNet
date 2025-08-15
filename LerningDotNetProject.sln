@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TODOList", "TODOList\TODOList.csproj", "{5FEE6A2F-9467-446B-857D-280F72AD0DD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B51C1118-3EFC-4C5D-837D-3ABEF1F5EC7F}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+		Dockerfile = Dockerfile
+		.dockerignore = .dockerignore
+		.env = .env
+		.env.example = .env.example
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FEE6A2F-9467-446B-857D-280F72AD0DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FEE6A2F-9467-446B-857D-280F72AD0DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FEE6A2F-9467-446B-857D-280F72AD0DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FEE6A2F-9467-446B-857D-280F72AD0DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

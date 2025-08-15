@@ -1,0 +1,33 @@
+﻿services:
+  db_psql:
+    image: postgres:${POSTGRES_VERSION:-15}-alpine
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-app}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-!ChangeMe!}
+      - POSTGRES_USER=${POSTGRES_USER:-app}
+    volumes:
+      - ./docker/db/data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-app}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+    #    networks:
+    #      - net
+  
+  dotnet:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - ${APP_PORT:-8080}:${APP_PORT:-8080}
+    env_file:
+      - .env
+#    networks:
+#      - net
+    restart: always
+    depends_on:
+      db_psql:
+        condition: service_healthy
